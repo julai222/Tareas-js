@@ -1,0 +1,94 @@
+body,
+main {
+  padding: 0;
+  margin: 0;
+  box-sizing: content-box;
+}
+
+.caja {
+  width: 100%;
+  height: 60px;
+  background-color: aquamarine;
+  /* position: static; */
+  position: fixed;
+  top: 0; /* desde el elemento padre*/
+  /* bottom: ; */
+  left: 50px;
+  /* right: ; */
+}
+
+.wa {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: green;
+  position: absolute;
+  top: 10px;
+  z-index: 100;
+}
+.pegajoso {
+  width: 600px;
+  height: 50px;
+  background: red;
+  position: sticky;
+  top: 10px;
+}
+
+p {
+  font-size: 50px;
+}
+
+.cara {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: yellow;
+  position: absolute;
+  top: 250px;
+  left: 150px;
+  transition: all 0.5s ease-in-out;
+  animation: girar 1s infinite;
+}
+
+.ojo {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: black;
+  position: relative;
+}
+
+.derecho {
+  top: 25%;
+  left: 45px;
+}
+
+.izquierdo {
+  top: 25%;
+  left: 120px;
+}
+
+.nariz {
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 25px solid orange;
+  position: absolute;
+  top: 100px;
+  left: 90px;
+}
+
+.cara:hover {
+  transform: scale(1.5);
+}
+
+/*  */
+@keyframes girar {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

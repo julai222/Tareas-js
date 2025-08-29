@@ -1,0 +1,43 @@
+:root {
+  --primaryColor: #2be064;
+  --secundaryColor: #53e0df;
+  --widthCard: 200px;
+}
+
+/* así se usa */
+body {
+  background-color: var(--primaryColor, green);
+}
+
+.caja {
+  width: 100%;
+  height: 30vh;
+  border: solid 1px black;
+  background-image: url("../public/background.webp");
+  background-attachment: fixed;
+  background: #2a7b9b;
+  background: radial-gradient(
+    circle,
+    rgba(42, 123, 155, 1) 0%,
+    rgba(93, 87, 199, 1) 29%,
+    rgba(237, 221, 83, 1) 100%
+  );
+}
+
+.fachera {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+}
+
+.container :nth-child(1) {
+  display: none;
+}
+
+.container :nth-child(2) {
+  opacity: 50%;
+}
+
+.container :nth-child(3) {
+  visibility: hidden;
+}
