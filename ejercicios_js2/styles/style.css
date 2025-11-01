@@ -1,0 +1,46 @@
+.rojo { color: red; }
+.verde { color: green; }
+.azul { color: blue; }
+
+.pequeño { font-size: 12px; }
+.mediano { font-size: 18px; }
+.grande { font-size: 24px; }
+
+.fondo-amarillo { background-color: violet; }
+.fondo-celeste { background-color: skyblue; }
+
+.resaltar {
+    color: white;
+    background-color: purple;
+    padding: 5px;
+}
+
+.activo {
+    border: 2px solid darkgreen;
+    font-weight: bold;
+}
+
+.violeta { color: darkviolet; }
+.naranja { color: darkorange; }
+.turquesa { color: darkturquoise; }
+
+.tamaño-pequeño { font-size: 16px; }
+.tamaño-medio { font-size: 22px; }
+.tamaño-grande { font-size: 30px; }
+
+.movible {
+    width: 150px;
+    height: 50px;
+    background-color: tomato;
+    margin-left: 0; 
+    transition: margin-left 0.5s; 
+    text-align: center;
+    line-height: 50px;
+    color: white;
+}
+
+.cuadro {
+    width: 200px;
+    height: 100px;
+    margin-top: 10px;
+}
