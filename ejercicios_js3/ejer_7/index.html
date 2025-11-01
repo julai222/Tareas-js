@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form class="form7">
+    <input type="text" name="tarea" placeholder="Nueva tarea">
+    <button>Agregar</button>
+    </form>
+
+    <ul class="listaTareas"></ul>
+
+    <script>
+    let lista = document.querySelector(".listaTareas");
+    let tareas = JSON.parse(localStorage.getItem("tareas")) || [];
+
+    function mostrarTareas() {
+    lista.innerHTML = "";
+    for (let t of tareas) {
+        let li = document.createElement("li");
+        li.textContent = t;
+        lista.appendChild(li);
+    }
+    }
+
+    mostrarTareas();
+
+    document.querySelector(".form7").addEventListener("submit", e => {
+    e.preventDefault();
+    let tarea = e.target.tarea.value;
+    tareas.push(tarea);
+    localStorage.setItem("tareas", JSON.stringify(tareas));
+    mostrarTareas();
+    e.target.reset();
+    });
+    </script>
+
+</body>
+</html>

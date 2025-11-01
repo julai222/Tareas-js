@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form class="form6">
+    <input type="color" name="color">
+    <button>Guardar color</button>
+    </form>
+
+    <div class="cajaColor" style="width:200px; height:100px; border:1px solid #000;"></div>
+
+    <script>
+    let caja = document.querySelector(".cajaColor");
+    let guardado = localStorage.getItem("colorFavorito");
+    if (guardado) caja.style.background = guardado;
+
+    document.querySelector(".form6").addEventListener("submit", e => {
+    e.preventDefault();
+    let color = e.target.color.value;
+    localStorage.setItem("colorFavorito", color);
+    caja.style.background = color;
+    });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mis Ejercicios DOM</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Mis Ejercicios con JS y DOM</h1>
+
+  <!-- Ejercicio 1 -->
+  <section>
+    <h2>Ejercicio 1</h2>
+    <form id="f1">
+      <input type="text" name="nombre" placeholder="Tu nombre">
+      <input type="email" name="correo" placeholder="Tu correo">
+      <button type="submit">Mostrar</button>
+    </form>
+    <div id="out1"></div>
+  </section>
+
+  <!-- Ejercicio 2 -->
+  <section>
+    <h2>Ejercicio 2</h2>
+    <form id="f2">
+      <input type="text" name="nombre" placeholder="Nombre">
+      <input type="email" name="correo" placeholder="Email">
+      <button type="submit">Mostrar</button>
+    </form>
+    <div id="out2"></div>
+  </section>
+
+  <!-- Ejercicio 3 -->
+  <section>
+    <h2>Ejercicio 3</h2>
+    <form id="f3">
+      <input type="text" name="nombre" placeholder="Nombre">
+      <input type="email" name="correo" placeholder="Email">
+      <input type="number" name="edad" placeholder="Edad">
+      <button type="submit">Convertir a JSON</button>
+    </form>
+    <pre id="out3"></pre>
+  </section>
+
+  <!-- Ejercicio 4 y 5 -->
+  <section>
+    <h2>Ejercicio 4 y 5</h2>
+    <form id="f4">
+      <input type="text" name="nombre" placeholder="Nombre">
+      <input type="email" name="correo" placeholder="Email">
+      <input type="number" name="edad" placeholder="Edad">
+      <button type="submit">Guardar en LocalStorage</button>
+    </form>
+    <pre id="out4"></pre>
+    <button id="btnClearUser">Borrar datos</button>
+  </section>
+
+  <!-- Ejercicio 6 -->
+  <section>
+    <h2>Ejercicio 6</h2>
+    <form id="f6">
+      <input type="color" name="colorFavorito">
+      <button type="submit">Elegir color</button>
+    </form>
+    <div id="boxColor"></div>
+  </section>
+
+  <!-- Ejercicio 7 y 8 -->
+  <section>
+    <h2>Ejercicio 7 y 8</h2>
+    <form id="f7">
+      <input type="text" name="tarea" placeholder="Escribe tarea">
+      <button type="submit">Añadir</button>
+    </form>
+    <ul id="taskList"></ul>
+    <button id="btnClearTasks">Borrar todas las tareas</button>
+  </section>
+
+  <!-- Ejercicio 9 y 10 -->
+  <section>
+    <h2>Ejercicio 9 y 10</h2>
+    <form id="f9">
+      <input type="text" name="producto" placeholder="Producto">
+      <input type="number" name="precio" placeholder="Precio">
+      <button type="submit">Agregar a tabla</button>
+    </form>
+    <table>
+      <thead><tr><th>Producto</th><th>Precio</th></tr></thead>
+      <tbody id="tablaProd"></tbody>
+    </table>
+    <button id="btnDeleteLast">Borrar último producto</button>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

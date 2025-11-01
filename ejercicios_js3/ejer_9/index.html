@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form class="form9">
+    <input type="text" name="producto" placeholder="Producto">
+    <input type="number" name="precio" placeholder="Precio">
+    <button>Agregar</button>
+    </form>
+
+    <table border="1" class="tablaProductos">
+    <tr><th>Producto</th><th>Precio</th></tr>
+    </table>
+
+    <script>
+    let tabla = document.querySelector(".tablaProductos");
+    let productos = JSON.parse(localStorage.getItem("productos")) || [];
+
+    function mostrarTabla() {
+    tabla.innerHTML = "<tr><th>Producto</th><th>Precio</th></tr>";
+    for (let p of productos) {
+        tabla.innerHTML += `<tr><td>${p.producto}</td><td>${p.precio}</td></tr>`;
+    }
+    }
+
+    mostrarTabla();
+
+    document.querySelector(".form9").addEventListener("submit", e => {
+    e.preventDefault();
+    let datos = Object.fromEntries(new FormData(e.target));
+    productos.push(datos);
+    localStorage.setItem("productos", JSON.stringify(productos));
+    mostrarTabla();
+    e.target.reset();
+    });
+    </script>
+
+</body>
+</html>

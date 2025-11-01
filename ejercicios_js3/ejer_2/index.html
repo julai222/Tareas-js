@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form class="form2">
+  <input type="text" name="nombre" placeholder="Nombre">
+  <input type="email" name="email" placeholder="Email">
+  <button>Enviar</button>
+</form>
+
+<div class="resultado2"></div>
+
+<script>
+document.querySelector(".form2").addEventListener("submit", e => {
+  e.preventDefault();
+  let nombre = e.target.nombre.value;
+  let email = e.target.email.value;
+
+  let cont = document.querySelector(".resultado2");
+  cont.innerHTML = "";
+  let p1 = document.createElement("p");
+  let p2 = document.createElement("p");
+  p1.textContent = "Nombre: " + nombre;
+  p2.textContent = "Email: " + email;
+
+  cont.appendChild(p1);
+  cont.appendChild(p2);
+});
+</script>
+
+</body>
+</html>

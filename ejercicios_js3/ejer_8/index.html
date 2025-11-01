@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Document</title>
+</head>
+<body>
+  <h2>Lista de tareas</h2>
+
+  <form class="form7">
+    <input type="text" name="tarea" placeholder="Nueva tarea" required>
+    <button>Agregar</button>
+  </form>
+
+  <button class="borrarTareas">Borrar todas las tareas</button>
+
+  <ul class="listaTareas"></ul>
+
+  <script>
+    const form = document.querySelector(".form7");
+    const lista = document.querySelector(".listaTareas");
+    const btnBorrarTodas = document.querySelector(".borrarTareas");
+
+    let tareas = JSON.parse(localStorage.getItem("tareas")) || [];
+
+    function mostrarTareas() {
+      lista.innerHTML = "";
+      for (let i = 0; i < tareas.length; i++) {
+        let li = document.createElement("li");
+        li.textContent = tareas[i];
+
+        let btnBorrar = document.createElement("button");
+        btnBorrar.textContent = "Borrar";
+        btnBorrar.style.marginLeft = "8px";
+        btnBorrar.addEventListener("click", () => {
+          tareas.splice(i, 1);
+          localStorage.setItem("tareas", JSON.stringify(tareas));
+          mostrarTareas();
+        });
+
+        li.appendChild(btnBorrar);
+        lista.appendChild(li);
+      }
+    }
+
+    mostrarTareas();
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+      const nueva = e.target.tarea.value.trim();
+      if (nueva === "") return;
+      tareas.push(nueva);
+      localStorage.setItem("tareas", JSON.stringify(tareas));
+      mostrarTareas();
+      e.target.reset();
+    });
+    btnBorrarTodas.addEventListener("click", () => {
+      tareas = [];
+      localStorage.removeItem("tareas");
+      mostrarTareas();
+    });
+  </script>
+</body>
+</html>

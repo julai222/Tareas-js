@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form class="form4">
+    <input type="text" name="nombre" placeholder="Nombre">
+    <input type="email" name="email" placeholder="Email">
+    <input type="number" name="edad" placeholder="Edad">
+    <button>Guardar</button>
+    </form>
+
+    <pre class="salida4"></pre>
+
+    <script>
+    document.querySelector(".form4").addEventListener("submit", e => {
+    e.preventDefault();
+    let datos = Object.fromEntries(new FormData(e.target));
+    localStorage.setItem("datosUsuario", JSON.stringify(datos));
+    document.querySelector(".salida4").textContent = JSON.stringify(datos, null, 2);
+    });
+    </script>
+
+</body>
+</html>

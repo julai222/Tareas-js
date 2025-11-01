@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catálogo de Productos - Recuperatorio</title>
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
+<script src="scripts/script.js"></script>
+
+<body>
+  <header>
+    <h1>Catálogo de Productos</h1>
+  </header>
+
+  <nav class="tabs" role="tablist">
+    <button class="tab active" role="tab" aria-selected="true" aria-controls="tab-agregar" data-target="tab-agregar">Agregar</button>
+    <button class="tab" role="tab" aria-selected="false" aria-controls="tab-buscar" data-target="tab-buscar">Buscar / Filtrar</button>
+  </nav>
+
+  <main>
+    <!-- Sección para agregar productos -->
+    <section id="tab-agregar" class="tab-content active" role="tabpanel">
+      <form class="form-agregar">
+        <label>
+          Nombre:
+          <input type="text" name="nombre" required />
+        </label>
+        <label>
+          Precio:
+          <input type="number" name="precio" required min="0" />
+        </label>
+        <label>
+          Categoría:
+          <select name="categoria" required>
+            <option value="hogar">Hogar</option>
+            <option value="electronica">Electrónica</option>
+            <option value="comida">Comida</option>
+          </select>
+        </label>
+        <button type="submit">Agregar producto</button>
+      </form>
+
+      <div class="lista-productos"></div>
+    </section>
+
+    <!-- Sección para búsqueda / filtrado -->
+    <section id="tab-buscar" class="tab-content" role="tabpanel" aria-hidden="true">
+      <input type="text" class="input-buscar" placeholder="Buscar por nombre, categoría o precio..." />
+      <div class="lista-filtrada"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Recuperatorio de Programación - Juli</p>
+  </footer>
+
+  <script>
+    // Tab switching: simple, accesible y sin dependencias.
+    (function(){
+      const tabs = Array.from(document.querySelectorAll('.tab'));
+      const contents = Array.from(document.querySelectorAll('.tab-content'));
+
+      function setActiveTab(targetId, clickedTab){
+        // deactivate all tabs & panels
+        tabs.forEach(t=>{
+          const isTarget = t === clickedTab;
+          t.classList.toggle('active', isTarget);
+          t.setAttribute('aria-selected', String(isTarget));
+        });
+        contents.forEach(c=>{
+          const isTarget = c.id === targetId;
+          c.classList.toggle('active', isTarget);
+          c.setAttribute('aria-hidden', String(!isTarget));
+        });
+      }
+
+      // attach click handlers
+      tabs.forEach(tab=>{
+        tab.addEventListener('click', (e)=>{
+          const target = tab.dataset.target;
+          setActiveTab(target, tab);
+        });
+
+        // keyboard navigation (Left/Right)
+        tab.addEventListener('keydown', (e)=>{
+          const idx = tabs.indexOf(tab);
+          if(e.key === 'ArrowRight'){
+            const next = tabs[(idx + 1) % tabs.length];
+            next.focus();
+            next.click();
+          } else if(e.key === 'ArrowLeft'){
+            const prev = tabs[(idx - 1 + tabs.length) % tabs.length];
+            prev.focus();
+            prev.click();
+          }
+        });
+      });
+
+      // optional: allow activating a tab via hash on load (#buscar or #agregar)
+      const hash = location.hash.replace('#','');
+      if(hash){
+        const initial = tabs.find(t => t.dataset.target === `tab-${hash}`);
+        if(initial) initial.click();
+      }
+    })();
+  </script>
+</body>
+</html>
