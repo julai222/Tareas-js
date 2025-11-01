@@ -1,4 +1,4 @@
-// 1️ Pedir dos numeros y mostrar cual es mayor
+// 1️ 
 let numero1 = prompt("Ingrese el primer numero:");
 let numero2 = prompt("Ingrese el segundo numero:");
 
@@ -10,7 +10,7 @@ if (numero1 > numero2) {
   console.log("Los dos numeros son iguales");
 }
 
-// 2️ Ver si una persona es mayor o menor de edad
+// 2️ 
 let edad = prompt("Ingrese su edad:");
 
 if (edad >= 18) {
@@ -19,7 +19,7 @@ if (edad >= 18) {
   console.log("Sos menor de edad");
 }
 
-// 3️ Ver si el dia es laboral o fin de semana
+// 3️ 
 let dia = prompt("Ingrese un dia de la semana (por ejemplo: lunes):");
 
 if (dia == "lunes" || dia == "martes" || dia == "miercoles" || dia == "jueves" || dia == "viernes") {
@@ -30,7 +30,7 @@ if (dia == "lunes" || dia == "martes" || dia == "miercoles" || dia == "jueves" |
   console.log("Ese no parece ser un dia");
 }
 
-// 4️ Calculadora simple
+// 4️ 
 let n1 = prompt("Ingrese el primer numero:");
 let operador = prompt("Ingrese el operador (+, -, *, /):");
 let n2 = prompt("Ingrese el segundo numero:");

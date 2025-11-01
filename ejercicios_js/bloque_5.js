@@ -1,4 +1,4 @@
-// 1️ Crear un objeto persona con nombre, edad y ciudad. Mostrarlo.
+// 1️ 
 let persona = {
   nombre: "Julai",
   edad: 17,
@@ -8,13 +8,13 @@ let persona = {
 console.log("Objeto persona:", persona);
 
 
-// 2️ Acceder a las propiedades del objeto y mostrarlas.
+// 2️ 
 console.log("Nombre:", persona.nombre);
 console.log("Edad:", persona.edad);
 console.log("Ciudad:", persona.ciudad);
 
 
-// 3️ Crear un array de objetos con 3 personas y mostrar sus nombres con un for.
+// 3️ 
 let personas = [
   { nombre: "Ana", edad: 25, ciudad: "Buenos Aires" },
   { nombre: "Luis", edad: 30, ciudad: "Cordoba" },
@@ -26,7 +26,7 @@ for (let i = 0; i < personas.length; i++) {
 }
 
 
-// 4️ Crear una función que reciba un objeto persona y muestre un mensaje.
+// 4️ 
 function mostrarPersona(p) {
   console.log("Hola, soy " + p.nombre + " y tengo " + p.edad + " años.");
 }
